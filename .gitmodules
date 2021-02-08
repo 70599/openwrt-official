@@ -1,0 +1,3 @@
+[submodule "package/diy/luci-app-xray"]
+	path = package/diy/luci-app-xray
+	url = https://github.com/yichya/luci-app-xray.git

@@ -12,7 +12,7 @@ name: PHICOMM K3
 on:
   push:
     branches:
-      - 'mater
+      - 'mater'
     paths:
       - 'k3.config'
   # schedule:
