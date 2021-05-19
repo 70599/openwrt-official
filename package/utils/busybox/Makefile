@@ -81,18 +81,11 @@ endef
 Package/busybox-selinux/conffiles = $(Package/busybox/conffiles)
 endif
 
-# don't create a version string containing the actual timestamp
-export KCONFIG_NOTIMESTAMP=1
-
-
 ifndef CONFIG_USE_MUSL
 LDLIBS:=m crypt
 endif
 
 LDLIBS += $(call BUSYBOX_IF_ENABLED,PAM,pam pam_misc pthread)
-ifeq ($(CONFIG_USE_GLIBC),y)
-  LDLIBS += $(call BUSYBOX_IF_ENABLED,NSLOOKUP_OPENWRT,resolv)
-endif
 
 ifeq ($(BUILD_VARIANT),selinux)
   LDLIBS += selinux sepol
